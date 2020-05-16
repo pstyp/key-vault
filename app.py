@@ -7,7 +7,7 @@ from wtforms import StringField, SubmitField, SelectField
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY']='efwoiweifcjwdcxs'
+app.config['SECRET_KEY']=getenv('SECRET_KEY')
 
 langs = requests.get('https://api.cognitive.microsofttranslator.com/languages?api-version=3.0')
 langs = langs.json()
