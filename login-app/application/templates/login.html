@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+
+<h1>Login Page</h1>
+	<div class="form-group">
+		<form method="POST" action="">
+			{{ login_form.hidden_tag() }}
+			<div class="login_form-group">
+				{{ login_form.email.label }}
+				{{ login_form.email(class="login_form-control login_form-control-lg is-invalid") }}
+				{% if login_form.email.errors %}
+					<div class="invalid-feedback">
+						{% for error in login_form.email.errors %}
+							<span>{{ error }}</span>
+						{% endfor %}
+					</div>
+				{% endif %}
+			</div><br>
+			<div class="login_form-group">
+				{{ login_form.password.label }}
+				{{ login_form.password(class="login_form-control login_form-control-lg is-invalid") }}
+				{% if login_form.password.errors %}
+					<div class="invalid-feedback">
+						{% for error in login_form.password.errors %}
+							<span>{{ error }}</span>
+						{% endfor %}
+					</div>
+				{% endif %}
+			</div><br>
+			<div class="login_form-check">
+				{{ login_form.remember(class="login_form-check-input") }}
+				{{ login_form.remember.label(class="login_form-check-label") }}
+			</div><br>
+			<div class="login_form-group">
+				{{ login_form.submit(class="btn btn-info mb-20") }}
+			</div>
+		</form>
+    </div>
+    
+    </html>
