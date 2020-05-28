@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from os import getenv
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
+from flask_admin import Admin
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = getenv('LOGIN_DB_URI')

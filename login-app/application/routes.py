@@ -4,7 +4,26 @@ from flask_login import current_user, login_user, logout_user, login_required
 from application.forms import LoginForm
 from application.models import Users
 from os import getenv
+from functools import wraps
 
+
+def admin_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        print("Hello?")
+        if current_user.admin:
+            return f(*args, **kwargs)
+        else:
+            flash("You need to be an admin to view this page.")
+            return redirect(url_for('home'))
+
+    return wrap
+
+@app.route('/admin/page')
+@login_required
+@admin_required
+def admin():
+    return "Hello"
 
 @app.route('/')
 @app.route('/home')
