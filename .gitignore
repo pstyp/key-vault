@@ -1,0 +1,5 @@
+.vscode
+admin-app/__pycache__
+login-app/__pycache__
+login-app/.pytest_cache
+login-app/application/__pycache__

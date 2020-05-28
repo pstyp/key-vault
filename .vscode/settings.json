@@ -4,5 +4,6 @@
         "markdown",
         "latex",
         "plaintext"
-    ]
+    ],
+    "python.pythonPath": "/home/ben/Flask-venv/bin/python"
 }
