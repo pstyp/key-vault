@@ -29,15 +29,14 @@ def translate():
     if form.validate_on_submit():
         subscription_key = getenv('TRANSLATOR_TEXT_SUBSCRIPTION_KEY')
         endpoint = getenv('TRANSLATOR_TEXT_ENDPOINT')
-        addition = "translator/text/v3.0/translate?api-version=3.0&to="
+        addition = "translate?api-version=3.0&to="
         headers = {
-        'Ocp-Apim-Subscription-Key': subscription_key,
+        'Ocp-Apim-Subscription-Key':subscription_key,
         'Ocp-Apim-Subscription-Region':'westeurope',
-        'Content-type': 'application/json',
-        'X-ClientTraceId': str(uuid.uuid4())
+        'Content-Type':'application/json'
         }
         body = [{
-        'text': form.sentence.data
+        'Text': form.sentence.data
         }]
         constructed_url = endpoint + addition + form.language.data
         request = requests.post(constructed_url, headers=headers, json=body)
