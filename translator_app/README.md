@@ -11,6 +11,7 @@ Next you need to export some environment variables.
 
 - TRANSLATOR_TEXT_ENDPOINT
 - TRANSLATOR_TEXT_SUBSCRIPTION_KEY
+- SECRET_KEY
 
 
 ## Run the app
@@ -22,6 +23,7 @@ cd flask-translator-app
 sudo apt install python3-pip python3-venv
 export TRANSLATOR_TEXT_ENDPOINT=[YOUR ENDPOINT]
 export TRANSLATOR_TEXT_SUBSCRIPTION_KEY=[YOUR KEY]
+export SECRET_KEY=any_secret_key
 python3 -m venv venv
 . venv/bin/activate
 pip3 install -r requirements.txt
